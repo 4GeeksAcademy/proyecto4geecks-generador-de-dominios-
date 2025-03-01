@@ -7,24 +7,33 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
+  document.getElementById('excuse').addEventListener('click', generadorDominio);
+  
+  console.log("Hello Rigo from the console!");
+};
 
-   //write your code here+
-   let pronoun = ['the', 'our'];
-   let adj = ['great', 'big'];
-   let noun = ['jogger', 'racoon'];
+
+
+
+let pronoun = ['the', 'our'];
+let adj = ['great', 'big'];
+let noun = ['jogger', 'racoon'];
   
-   function generadorDominio() {
-     let dominio = [];
-     for(let itp = 0; itp < pronoun.length; itp++){
-       for(let ita = 0; ita < adj.length; ita++){
-         for(let itn = 0; itn < noun.length; itn++){
-           console.log(`${pronoun[itp]}${adj[ita]}${noun[itn]}.com`) ;
-         }
-       }
-     }
-   }
-   generadorDominio();
-  
+function generadorDominio() {
+  let dominio = [];
+   for(let itp = 0; itp < pronoun.length; itp++){
+      for(let ita = 0; ita < adj.length; ita++){
+        for(let itn = 0; itn < noun.length; itn++){
+          dominio.push(`<br>${pronoun[itp]}${adj[ita]}${noun[itn]}.com`);
+          console.log(dominio);
+           
+        }
+      }
+    }
+    document.getElementById("excuse").innerHTML = dominio;
+  }
+ 
+
    //  FORMA RESUMIDA
    /* let pronoun = ['the', 'our'];
    let adj = ['great', 'big'];
@@ -36,5 +45,3 @@ window.onload = function() {
        )
      )
    )   */
-  console.log("Hello Rigo from the console!");
-};
